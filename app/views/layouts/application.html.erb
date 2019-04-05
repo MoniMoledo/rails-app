@@ -10,7 +10,11 @@
   </head>
 
 <body>
-<img src="https://cdn-images-1.medium.com/max/2600/1*0KFB17_NGTPB0XWyc4BSgQ.jpeg">
-<p>Hello! My Name is Monique and I am a Software Enginner. I have learned programming with Java, then I have worked with C# and Python languages. Now I am trying to learn Ruby on Rails and Frond End development since the company I currently work for make use of them.</p>
+ <%= flash.each do |name, msg| %>
+  <ul>
+    <li><% msg %></li>
+  </ul>
+ <% end %>
+ <%= yield %>
 </body>
 </html>

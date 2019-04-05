@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+<% if @article.errors.any? %>
+<h2>Found the following errors when creating your article:</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |err_msg| %>
+        <li> <% err_msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <h1>Create a new article</h1>
+<div>
+  <%= form_for @article do |f|%>
+    <p>
+        <%= f.label :title %>
+        </br>
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :description %>
+        </br>
+        <%= f.text_area :description %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>
+<%= link_to 'Home', root_path %>
+</body>
+</html>
