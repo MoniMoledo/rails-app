@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>TestApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-<body>
 <% if @article.errors.any? %>
-<h2>Found the following errors when creating your article:</h2>
+  <h2>Found the following errors when creating your article:</h2>
   <ul>
     <% @article.errors.full_messages.each do |err_msg| %>
-        <li> <% err_msg %> </li>
+        <li> <%= err_msg %> </li>
     <% end %>
   </ul>
 <% end %>
@@ -35,6 +23,5 @@
     <%= f.submit %>
   <% end %>
 </div>
+</br></br>
 <%= link_to 'Home', root_path %>
-</body>
-</html>
