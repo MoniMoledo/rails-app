@@ -1,5 +1,7 @@
+<h1> Update your article:</h1>
+
 <% if @article.errors.any? %>
-  <h2>Found the following errors when creating your article:</h2>
+  <h2>Found the following errors when updating your article:</h2>
   <ul>
     <% @article.errors.full_messages.each do |err_msg| %>
         <li> <%= err_msg %> </li>
@@ -7,7 +9,6 @@
   </ul>
 <% end %>
 
-  <h1>Create a new article</h1>
 <div>
   <%= form_for @article do |f|%>
     <p>
